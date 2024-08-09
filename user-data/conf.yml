@@ -12,10 +12,11 @@ pageInfo:
 # Optional app settings and configuration
 appConfig:
   theme: material
+  auth:
    enableGlobalAuth: true
     users:
     - user: hojepapa
-      hash: 'mastery'
+      hash: mastery
       type: admin 
 
 # Main content - An array of sections, each containing an array of items

@@ -15,8 +15,9 @@ appConfig:
    enableGlobalAuth: true
     users:
     - user: hojepapa
-      hash: 'YourPasswordHashHere'
-      
+      hash: 'mastery'
+      type: admin 
+
 # Main content - An array of sections, each containing an array of items
 sections:
 - name: Getting Started

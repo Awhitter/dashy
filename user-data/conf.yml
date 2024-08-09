@@ -1,18 +1,22 @@
 ---
 # Page meta info, like heading, footer text and nav links
 pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
+  title: AI Mastery
+  description: Agents, tools, resources and beyond
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
+  - title: Agents
+    path: https://github.com/
   - title: Documentation
     path: https://dashy.to/docs
 
 # Optional app settings and configuration
 appConfig:
-  theme: colorful
-
+  theme: material
+   enableGlobalAuth: true
+    users:
+    - user: hojepapa
+      hash: 'YourPasswordHashHere'
+      
 # Main content - An array of sections, each containing an array of items
 sections:
 - name: Getting Started
@@ -44,4 +48,104 @@ sections:
     description: Get help with Dashy, raise a bug, or get in contact
     url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
     icon: far fa-hands-helping
-  
+
+- name: AI Agents Hub
+  icon: fas fa-brain
+  items:
+  - title: Content Creation Suite
+    description: AI-powered tools for generating various content types
+    icon: fas fa-pen-fancy
+    items:
+    - title: LongForm Writer
+      description: Creates detailed, cited articles (Wikipedia-style)
+      icon: fas fa-file-alt
+      url: https://storm.genie.stanford.edu
+    - title: Newsletter Composer
+      description: Crafts engaging newsletters
+      icon: far fa-envelope
+      url: https://beehive.com
+    - title: Blog Automator
+      description: Scrapes data, polishes content, and posts to your blog
+      icon: fas fa-rss
+      url: #
+    - title: Cheatsheet Generator
+      description: Compiles key information for quick reference
+      icon: fas fa-list-ol
+      url: #
+
+  - title: Visual Content Tools
+    description: AI agents for creating visual elements
+    icon: fas fa-palette
+    items:
+    - title: Diagram Wizard
+      description: Generates flowcharts and diagrams
+      icon: fas fa-project-diagram
+      url: https://roadmaps.sh
+    - title: Image Synthesizer
+      description: Creates custom images for your content
+      icon: far fa-image
+      url: https://stability.ai
+    - title: Data Visualizer
+      description: Transforms data into insightful charts
+      icon: fas fa-chart-pie
+      url: #
+
+  - title: Research & Analysis
+    description: AI-powered research and data analysis tools
+    icon: fas fa-microscope
+    items:
+    - title: Trend Analyzer
+      description: Scrapes and analyzes top trending content
+      icon: fas fa-chart-line
+      url: https://apify.com
+    - title: Deep Researcher
+      description: Conducts in-depth, cited research on any topic
+      icon: fas fa-search
+      url: https://scrapegraph-ai-web-dashboard.streamlit.app/
+    - title: Data Scientist
+      description: Performs advanced data analysis with Python
+      icon: fas fa-calculator
+      url: #
+
+  - title: Engagement & Interaction
+    description: AI agents for improving user engagement
+    icon: fas fa-users
+    items:
+    - title: QOTD Scheduler
+      description: Automates question posts for social media
+      icon: fas fa-calendar-check
+      url: #
+    - title: Motivational Coach
+      description: AI-powered goal setting and motivation
+      icon: fas fa-bullhorn
+      url: #
+    - title: Recruitment Assistant
+      description: Streamlines the recruitment follow-up process
+      icon: fas fa-user-plus
+      url: #
+
+  - title: Language & Communication
+    description: AI tools for language processing and translation
+    icon: fas fa-language
+    items:
+    - title: Polyglot Translator
+      description: Translates content across multiple languages
+      icon: fas fa-globe
+      url: #
+    - title: Discussion Moderator
+      description: AI-powered response system for forums
+      icon: far fa-comments
+      url: #
+
+  - title: Insight & Innovation
+    description: AI agents for generating new ideas and insights
+    icon: fas fa-lightbulb
+    items:
+    - title: Insight Generator
+      description: Adds valuable insights to existing content
+      icon: fas fa-gem
+      url: #
+    - title: Perplexity-powered Topic Explorer
+      description: Generates media-rich "topic of the day" content
+      icon: fas fa-newspaper
+      url: https://github.com/ItzCrazyKns/Perplexica

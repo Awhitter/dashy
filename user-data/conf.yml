@@ -15,7 +15,7 @@ appConfig:
   auth:
     users:
     - user: hojepapa
-      hash: 2946e82f6f59e0b9f1fa6e5b3c3d2d5cb5c6f9c8f9f2f3f4f5f6f7f8f9e8e7e6
+      hash: 38011b43becd198ef78acfef30aca5190c88aea5f0770feff11c0bbce698a625
       type: admin
 
 # Main content - An array of sections, each containing an array of items

@@ -13,7 +13,6 @@ pageInfo:
 appConfig:
   theme: material
   auth:
-    enableGlobalAuth: true
     users:
     - user: hojepapa
       password: mastery

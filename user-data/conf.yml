@@ -15,7 +15,7 @@ appConfig:
   auth:
     users:
     - user: hojepapa
-      password: mastery
+      hash: 2946e82f6f59e0b9f1fa6e5b3c3d2d5cb5c6f9c8f9f2f3f4f5f6f7f8f9e8e7e6
       type: admin
 
 # Main content - An array of sections, each containing an array of items

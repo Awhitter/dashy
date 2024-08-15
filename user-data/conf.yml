@@ -1,49 +1,78 @@
 appConfig:
   theme: material
   customCss: |
-    @media (min-width: 1780px) {
-      .home .item-group-container:not(.item-size-large) {
-        grid-template-columns: repeat(4, 1fr);
-      }
+    :root {
+      --primary: #312437;
+      --background: #5cdfeb;
+      --background-darker: #4285f4;
+      --font-headings: "Francois One", serif;
+      --font-body: "Raleway", sans-serif;
+      --font-monospace: "PT Mono", "Courier New", monospace;
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--background);
+    }
+    .section-title {
+      font-family: var(--font-headings);
+      font-size: 2.2rem;
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
     .home .item-group-container.item-size-large .item-group-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    .item-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .item-title {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    .item-description {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    .section-title {
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.5rem;
+      gap: 1.5rem;
     }
     .item-group-container.item-size-large .item {
-      background: var(--background-lighter);
-      border-radius: 10px;
-      padding: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
     .item-group-container.item-size-large .item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .item-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .item-title {
+      font-family: var(--font-headings);
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .item-description {
+      font-size: 1rem;
+      color: #666;
+    }
+    .item-group-container:not(.item-size-large) .item-group-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .item-group-container:not(.item-size-large) .item {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
+    .item-group-container:not(.item-size-large) .item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     }
 
 sections:
   - name: AI Agents
-    icon: fas fa-robot
+    icon: fas fa-brain
     displayData:
       cols: 3
       itemSize: large
@@ -51,15 +80,15 @@ sections:
     items:
       - title: Apply Writing Guidelines
         description: Enhance rationales with AI writing guidelines
-        icon: fas fa-pencil-alt
+        icon: fas fa-feather-alt
         url: https://app.hltcorp.com/admin/prompts
       - title: Item Improvement
         description: 12 AI suggestions to improve any content
-        icon: fas fa-magic
+        icon: fas fa-wand-magic-sparkles
         url: https://app.hltcorp.com/admin/prompts
       - title: Polish CSRs
         description: Refine NCLEX CSRs with AI
-        icon: fas fa-book-medical
+        icon: fas fa-file-medical-alt
         url: https://app.hltcorp.com/admin/prompts
       - title: Revamp CSRs
         description: Completely overhaul CSRs using AI
@@ -67,7 +96,7 @@ sections:
         url: https://app.hltcorp.com/admin/prompts
       - title: Polish Rationale
         description: Enhance rationale and key takeaways
-        icon: fas fa-star
+        icon: fas fa-star-half-alt
         url: https://app.hltcorp.com/admin/prompts
       - title: Revamp Rationale
         description: Completely overhaul rationale and key takeaways
@@ -94,7 +123,7 @@ sections:
       sectionLayout: grid
     items:
       - title: Dify
-        icon: fas fa-comment-dots
+        icon: fas fa-robot
         url: "#"
       - title: Flowrise
         icon: fas fa-project-diagram
@@ -127,18 +156,21 @@ sections:
     items:
       - title: AI Agents Guide
         description: Comprehensive overview of AI agents
-        icon: fas fa-book
+        icon: fas fa-book-open
         url: "#"
       - title: Prompt Engineering
         description: Best practices for creating effective prompts
         icon: fas fa-pencil-ruler
         url: "#"
       - title: Translator
+        description: AI-powered language translation
         icon: fas fa-language
         url: "#"
       - title: Motivational Chatbot
-        icon: fas fa-smile-beam
+        description: AI-driven motivational conversations
+        icon: fas fa-comments
         url: "#"
       - title: Streamlit Website Generator
+        description: AI-assisted website creation with Streamlit
         icon: fas fa-laptop-code
         url: "#"

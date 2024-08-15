@@ -1,0 +1,40 @@
+pageInfo:
+  title: AI Tools
+
+sections:
+  - name: AI Development Tools
+    icon: fas fa-toolbox
+    displayData:
+      cols: 3
+      itemSize: medium
+    items:
+      - title: Dify
+        description: Multi-step prompt and chatbot creator
+        icon: fas fa-robot
+        url: "#"
+        target: newtab
+      - title: Flowrise
+        description: Visual workflow for AI agents
+        icon: https://raw.githubusercontent.com/FlowiseAI/Flowise/main/images/flowise.png
+        url: https://flowiseai-railway-production-8413.up.railway.app/
+        target: newtab
+      - title: Zapier
+        description: AI-powered automation
+        icon: https://cdn.worldvectorlogo.com/logos/zapier-1.svg
+        url: https://zapier.com/
+        target: newtab
+      - title: OpenUI
+        description: AI interface designer
+        icon: fas fa-layer-group
+        url: "#"
+        target: newtab
+      - title: V0 by Vercel
+        description: Rapid interface prototyping
+        icon: fas fa-paint-brush
+        url: https://v0.dev/
+        target: newtab
+      - title: Aider
+        description: AI coding assistant
+        icon: fas fa-terminal
+        url: "#"
+        target: newtab

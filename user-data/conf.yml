@@ -11,10 +11,12 @@ appConfig:
       --item-text-color: #E0E0E0;
       --item-background-color: #3A3D5A;
       --item-background-hover-color: #50538B;
-      --item-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      --item-hover-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      --section-padding: 25px;
-      --small-item-width: 180px;
+      --item-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --item-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      --section-padding: 15px;
+      --small-item-width: 150px;
+      --large-item-width: 220px;
+      --large-item-height: 160px;
     }
 
     body {
@@ -25,71 +27,73 @@ appConfig:
 
     .section-title {
       font-family: var(--font-headings);
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       color: var(--primary);
-      border-bottom: 3px solid var(--primary);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
       text-align: center;
     }
 
     .home .item-group-container.item-size-large .item-group-grid {
       display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
       padding: var(--section-padding);
     }
 
     .item-group-container.item-size-large .item {
       background: linear-gradient(135deg, #3A3D5A, #50538B);
-      border-radius: 15px;
-      padding: 2.5rem;
+      border-radius: 12px;
+      padding: 1.8rem;
       box-shadow: var(--item-shadow);
       transition: all 0.3s ease;
       color: var(--item-text-color);
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: var(--large-item-width);
+      min-height: var(--large-item-height);
     }
 
     .item-group-container.item-size-large .item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: var(--item-hover-shadow);
       background: linear-gradient(135deg, #4A4D6A, #60638B);
     }
 
     .item-icon {
-      font-size: 4.5rem;
-      margin-bottom: 1rem;
+      font-size: 4rem;
+      margin-bottom: 0.8rem;
       color: var(--item-text-color);
     }
 
     .item-title {
       font-family: var(--font-headings);
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       color: var(--item-text-color);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .item-description {
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #C0C0C0;
     }
 
     .item-group-container:not(.item-size-large) .item-group-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
       padding: var(--section-padding);
     }
 
     .item-group-container:not(.item-size-large) .item {
       background: var(--item-background-color);
       border-radius: 10px;
-      padding: 1.5rem;
+      padding: 1.2rem;
       box-shadow: var(--item-shadow);
       transition: all 0.2s ease;
       font-size: 1.2rem;
@@ -97,6 +101,7 @@ appConfig:
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: var(--small-item-width);
     }
 
     .item-group-container:not(.item-size-large) .item:hover {
@@ -105,21 +110,9 @@ appConfig:
       background: var(--item-background-hover-color);
     }
 
-    .item-group-container.item-size-small .item {
-      max-width: var(--small-item-width);
-    }
-
-    .item-group-container.item-size-small .item .item-title {
-      font-size: 1.4rem;
-    }
-
-    .item-group-container.item-size-small .item .item-icon {
-      font-size: 3rem;
-    }
-
     @media screen and (max-width: 768px) {
       .home .item-group-container.item-size-large .item-group-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -127,7 +120,7 @@ sections:
   - name: AI Agents
     icon: mdi-brain
     displayData:
-      cols: 2
+      cols: 3
       itemSize: large
       sectionLayout: grid
     items:

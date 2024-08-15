@@ -14,9 +14,9 @@ appConfig:
       --item-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --item-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       --section-padding: 15px;
-      --small-item-width: 150px;
-      --large-item-width: 220px;
-      --large-item-height: 160px;
+      --small-item-width: 180px;
+      --large-item-width: 260px;
+      --large-item-height: 180px;
     }
 
     body {
@@ -49,13 +49,14 @@ appConfig:
       box-shadow: var(--item-shadow);
       transition: all 0.3s ease;
       color: var(--item-text-color);
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       max-width: var(--large-item-width);
       min-height: var(--large-item-height);
+      word-wrap: break-word;
     }
 
     .item-group-container.item-size-large .item:hover {
@@ -65,14 +66,14 @@ appConfig:
     }
 
     .item-icon {
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-bottom: 0.8rem;
       color: var(--item-text-color);
     }
 
     .item-title {
       font-family: var(--font-headings);
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: var(--item-text-color);
       margin-bottom: 0.4rem;
@@ -81,11 +82,12 @@ appConfig:
     .item-description {
       font-size: 1rem;
       color: #C0C0C0;
+      white-space: normal;
     }
 
     .item-group-container:not(.item-size-large) .item-group-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
       padding: var(--section-padding);
     }
@@ -102,6 +104,7 @@ appConfig:
       flex-direction: column;
       align-items: center;
       max-width: var(--small-item-width);
+      word-wrap: break-word;
     }
 
     .item-group-container:not(.item-size-large) .item:hover {

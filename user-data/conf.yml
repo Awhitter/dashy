@@ -1,32 +1,48 @@
----
-pageInfo:
-  title: AI Mastery Hub
-  description: Your central dashboard for AI agents, tools, and resources
-  navLinks:
-    - title: GitHub
-      path: https://github.com/
-    - title: Documentation 
-      path: https://dashy.to/docs
-  logo: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-
 appConfig:
-  theme: dashy-docs
+  theme: material
   customCss: |
-    .item-group-container { grid-template-columns: repeat(3, 1fr); }
-    .item-group-container.item-size-large .item-group-grid { display: flex !important; }
-    .item-icon { font-size: 2rem; }
-    .item-title { font-weight: bold; }
-    .item-description { font-size: 0.9rem; opacity: 0.8; }
-    .section-title { font-size: 1.5rem; text-transform: uppercase; }
-  layout: auto
-  iconSize: medium
-  language: en
-  statusCheck: true
-  enableFontAwesome: true
-  fontAwesomeKey: 2e949c5bf4
+    @media (min-width: 1780px) {
+      .home .item-group-container:not(.item-size-large) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .home .item-group-container.item-size-large .item-group-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .item-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .item-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .item-description {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+    .item-group-container.item-size-large .item {
+      background: var(--background-lighter);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .item-group-container.item-size-large .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
 sections:
-  - name: Live AI Agents
+  - name: AI Agents
     icon: fas fa-robot
     displayData:
       cols: 3
@@ -35,57 +51,40 @@ sections:
     items:
       - title: Apply Writing Guidelines
         description: Enhance rationales with AI writing guidelines
-        icon: far fa-edit
+        icon: fas fa-pencil-alt
         url: https://app.hltcorp.com/admin/prompts
-        tags: [writing, guidelines, AI]
       - title: Item Improvement
         description: 12 AI suggestions to improve any content
         icon: fas fa-magic
         url: https://app.hltcorp.com/admin/prompts
-        tags: [improvement, suggestions, content]
       - title: Polish CSRs
         description: Refine NCLEX CSRs with AI
         icon: fas fa-book-medical
         url: https://app.hltcorp.com/admin/prompts
-        tags: [NCLEX, CSR, refinement]
       - title: Revamp CSRs
         description: Completely overhaul CSRs using AI
         icon: fas fa-sync-alt
         url: https://app.hltcorp.com/admin/prompts
-        tags: [overhaul, CSR, AI]
       - title: Polish Rationale
         description: Enhance rationale and key takeaways
         icon: fas fa-star
         url: https://app.hltcorp.com/admin/prompts
-        tags: [rationale, enhancement, key takeaways]
       - title: Revamp Rationale
         description: Completely overhaul rationale and key takeaways
         icon: fas fa-lightbulb
         url: https://app.hltcorp.com/admin/prompts
-        tags: [overhaul, rationale, key takeaways]
-
-  - name: Question of the Day Agents
-    icon: fas fa-calendar-day
-    displayData:
-      cols: 3
-      itemSize: medium
-      sectionLayout: grid
-    items:
       - title: FNP QOTD
         description: Full prompt for FNP question of the day
         icon: fas fa-user-md
         url: https://app.hltcorp.com/admin/prompts
-        tags: [FNP, question, daily]
       - title: NCLEX RN QOTD
         description: NCLEX RN question of the day notifications
         icon: fas fa-heartbeat
         url: https://app.hltcorp.com/admin/prompts
-        tags: [NCLEX, RN, daily question]
       - title: ASVAB QOTD
         description: ASVAB question of the day notifications
         icon: fas fa-fighter-jet
         url: https://app.hltcorp.com/admin/prompts
-        tags: [ASVAB, question, daily]
 
   - name: AI Tools
     icon: fas fa-tools
@@ -95,48 +94,32 @@ sections:
       sectionLayout: grid
     items:
       - title: Dify
-        description: Multi-step prompts and chatbots
         icon: fas fa-comment-dots
         url: "#"
-        tags: [prompts, chatbots]
       - title: Flowrise
-        description: Visual AI workflow builder
         icon: fas fa-project-diagram
         url: https://flowiseai-railway-production-8413.up.railway.app/
-        tags: [workflow, visual, builder]
       - title: Zapier
-        description: AI-powered automation
         icon: fab fa-zapier
         url: https://zapier.com/
-        tags: [automation, integration]
       - title: OpenUI
-        description: AI interface designer
         icon: fas fa-palette
         url: "#"
-        tags: [interface, design, AI]
       - title: V0 by Vercel
-        description: Rapid interface prototyping
         icon: fas fa-code
         url: https://v0.dev/
-        tags: [prototyping, interface]
       - title: Aider
-        description: AI coding assistant
         icon: fas fa-terminal
         url: "#"
-        tags: [coding, assistant]
       - title: Claude Dev
-        description: Advanced AI language model
         icon: fas fa-brain
         url: "#"
-        tags: [language model, AI]
       - title: Apiify
-        description: Web data extraction tool
         icon: fas fa-spider
         url: https://apify.com/
-        tags: [data extraction, web]
 
-  - name: Resources
-    icon: fas fa-book
+  - name: Resources & Experimental
+    icon: fas fa-flask
     displayData:
       cols: 2
       itemSize: medium
@@ -144,31 +127,18 @@ sections:
     items:
       - title: AI Agents Guide
         description: Comprehensive overview of AI agents
-        icon: fas fa-robot
+        icon: fas fa-book
         url: "#"
-        tags: [guide, overview, AI agents]
       - title: Prompt Engineering
         description: Best practices for creating effective prompts
-        icon: fas fa-pencil-alt
+        icon: fas fa-pencil-ruler
         url: "#"
-        tags: [prompts, engineering, best practices]
-
-  - name: Experimental Agents
-    icon: fas fa-flask
-    displayData:
-      cols: 3
-      itemSize: small
-      sectionLayout: grid
-    items:
       - title: Translator
         icon: fas fa-language
         url: "#"
-        tags: [translation, language]
       - title: Motivational Chatbot
         icon: fas fa-smile-beam
         url: "#"
-        tags: [motivation, chatbot]
       - title: Streamlit Website Generator
-        icon: fas fa-magic
+        icon: fas fa-laptop-code
         url: "#"
-        tags: [website, generator, Streamlit]

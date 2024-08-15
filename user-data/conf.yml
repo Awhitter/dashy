@@ -7,19 +7,21 @@ pageInfo:
       path: https://github.com/
     - title: Documentation 
       path: https://dashy.to/docs
+  logo: https://i.ibb.co/qWWpD0v/astro-dab-128.png
 
 appConfig:
-  theme: nord
-  layout: vertical
-  iconSize: large
+  theme: dashy-docs
+  customCss: |
+    .item-group-container { grid-template-columns: repeat(3, 1fr); }
+    .item-group-container.item-size-large .item-group-grid { display: flex !important; }
+    .item-icon { font-size: 2rem; }
+    .item-title { font-weight: bold; }
+    .item-description { font-size: 0.9rem; opacity: 0.8; }
+    .section-title { font-size: 1.5rem; text-transform: uppercase; }
+  layout: auto
+  iconSize: medium
   language: en
   statusCheck: true
-  statusCheckInterval: 300
-  auth:
-    users:
-      - user: hojepapa
-        hash: 38011b43becd198ef78acfef30aca5190c88aea5f0770feff11c0bbce698a625
-        type: admin
   enableFontAwesome: true
   fontAwesomeKey: 2e949c5bf4
 
@@ -29,210 +31,144 @@ sections:
     displayData:
       cols: 3
       itemSize: large
+      sectionLayout: grid
     items:
       - title: Apply Writing Guidelines
         description: Enhance rationales with AI writing guidelines
         icon: far fa-edit
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [writing, guidelines, AI]
       - title: Item Improvement
         description: 12 AI suggestions to improve any content
         icon: fas fa-magic
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [improvement, suggestions, content]
       - title: Polish CSRs
         description: Refine NCLEX CSRs with AI
         icon: fas fa-book-medical
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [NCLEX, CSR, refinement]
       - title: Revamp CSRs
         description: Completely overhaul CSRs using AI
         icon: fas fa-sync-alt
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [overhaul, CSR, AI]
       - title: Polish Rationale
         description: Enhance rationale and key takeaways
         icon: fas fa-star
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [rationale, enhancement, key takeaways]
       - title: Revamp Rationale
         description: Completely overhaul rationale and key takeaways
         icon: fas fa-lightbulb
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [overhaul, rationale, key takeaways]
 
   - name: Question of the Day Agents
     icon: fas fa-calendar-day
     displayData:
       cols: 3
       itemSize: medium
+      sectionLayout: grid
     items:
       - title: FNP QOTD
         description: Full prompt for FNP question of the day
         icon: fas fa-user-md
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [FNP, question, daily]
       - title: NCLEX RN QOTD
         description: NCLEX RN question of the day notifications
         icon: fas fa-heartbeat
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [NCLEX, RN, daily question]
       - title: ASVAB QOTD
         description: ASVAB question of the day notifications
         icon: fas fa-fighter-jet
         url: https://app.hltcorp.com/admin/prompts
-        statusCheck: true
-        target: newtab
+        tags: [ASVAB, question, daily]
 
   - name: AI Tools
     icon: fas fa-tools
     displayData:
       cols: 4
-      itemSize: medium
+      itemSize: small
+      sectionLayout: grid
     items:
       - title: Dify
         description: Multi-step prompts and chatbots
         icon: fas fa-comment-dots
         url: "#"
-        target: newtab
+        tags: [prompts, chatbots]
       - title: Flowrise
         description: Visual AI workflow builder
         icon: fas fa-project-diagram
         url: https://flowiseai-railway-production-8413.up.railway.app/
-        target: newtab
+        tags: [workflow, visual, builder]
       - title: Zapier
         description: AI-powered automation
         icon: fab fa-zapier
         url: https://zapier.com/
-        target: newtab
+        tags: [automation, integration]
       - title: OpenUI
         description: AI interface designer
         icon: fas fa-palette
         url: "#"
-        target: newtab
+        tags: [interface, design, AI]
       - title: V0 by Vercel
         description: Rapid interface prototyping
         icon: fas fa-code
         url: https://v0.dev/
-        target: newtab
+        tags: [prototyping, interface]
       - title: Aider
         description: AI coding assistant
         icon: fas fa-terminal
         url: "#"
-        target: newtab
+        tags: [coding, assistant]
       - title: Claude Dev
         description: Advanced AI language model
         icon: fas fa-brain
         url: "#"
-        target: newtab
+        tags: [language model, AI]
       - title: Apiify
         description: Web data extraction tool
         icon: fas fa-spider
         url: https://apify.com/
-        target: newtab
-
-  - name: Content Marketing Agents
-    icon: fas fa-bullhorn
-    displayData:
-      cols: 4
-      itemSize: small
-    items:
-      - title: Wikipedia Article Generator
-        icon: fab fa-wikipedia-w
-        url: "#"
-        statusCheck: false
-      - title: Newsletter Creator
-        icon: far fa-newspaper
-        url: "#"
-        statusCheck: false
-      - title: Cheatsheet Builder
-        icon: fas fa-list-alt
-        url: "#"
-        statusCheck: false
-      - title: Topic Explorer
-        icon: fas fa-compass
-        url: "#"
-        statusCheck: false
-      - title: Blog Writer
-        icon: fas fa-pen-fancy
-        url: "#"
-        statusCheck: false
-      - title: Infographic Creator
-        icon: fas fa-chart-pie
-        url: "#"
-        statusCheck: false
-      - title: Flow Chart Maker
-        icon: fas fa-project-diagram
-        url: "#"
-        statusCheck: false
-
-  - name: Other Agents
-    icon: fas fa-cogs
-    displayData:
-      cols: 5
-      itemSize: small
-    items:
-      - title: Top Trends Scraper
-        icon: fas fa-chart-line
-        url: "#"
-        statusCheck: false
-      - title: Tone Analyzer
-        icon: fas fa-microphone-alt
-        url: "#"
-        statusCheck: false
-      - title: Discussions Responder
-        icon: fas fa-comments
-        url: "#"
-        statusCheck: false
-      - title: Ads Optimizer
-        icon: fas fa-ad
-        url: "#"
-        statusCheck: false
-      - title: Data Analyst
-        icon: fas fa-database
-        url: "#"
-        statusCheck: false
-
-  - name: Experimental Agents
-    icon: fas fa-flask
-    displayData:
-      cols: 3
-      itemSize: small
-    items:
-      - title: Translator
-        icon: fas fa-language
-        url: "#"
-        statusCheck: false
-      - title: Motivational Chatbot
-        icon: fas fa-smile-beam
-        url: "#"
-        statusCheck: false
-      - title: Streamlit Website Generator
-        icon: fas fa-magic
-        url: "#"
-        statusCheck: false
+        tags: [data extraction, web]
 
   - name: Resources
     icon: fas fa-book
     displayData:
       cols: 2
       itemSize: medium
+      sectionLayout: grid
     items:
       - title: AI Agents Guide
         description: Comprehensive overview of AI agents
         icon: fas fa-robot
         url: "#"
-        target: newtab
+        tags: [guide, overview, AI agents]
       - title: Prompt Engineering
         description: Best practices for creating effective prompts
         icon: fas fa-pencil-alt
         url: "#"
-        target: newtab
+        tags: [prompts, engineering, best practices]
+
+  - name: Experimental Agents
+    icon: fas fa-flask
+    displayData:
+      cols: 3
+      itemSize: small
+      sectionLayout: grid
+    items:
+      - title: Translator
+        icon: fas fa-language
+        url: "#"
+        tags: [translation, language]
+      - title: Motivational Chatbot
+        icon: fas fa-smile-beam
+        url: "#"
+        tags: [motivation, chatbot]
+      - title: Streamlit Website Generator
+        icon: fas fa-magic
+        url: "#"
+        tags: [website, generator, Streamlit]

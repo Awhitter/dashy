@@ -220,4 +220,4 @@ sections:
     icon: mdi-flask-outline
     displayData:
       cols: 1
-      itemSize
+      itemSize;

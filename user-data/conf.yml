@@ -1,13 +1,19 @@
 appConfig:
   theme: custom
+  fontAwesomeKey: "7ca75a0dca" # Your Font Awesome API Key
   customCss: |
     :root {
-      --primary: #312437;
-      --background: #5cdfeb;
-      --background-darker: #4285f4;
+      --primary: #3A2F45;
+      --background: #61dafb;
+      --background-darker: #20232a;
       --font-headings: "Francois One", serif;
       --font-body: "Raleway", sans-serif;
       --font-monospace: "PT Mono", "Courier New", monospace;
+      --item-text-color: #ffffff;
+      --item-background-color: #282c34;
+      --item-background-hover-color: #404854;
+      --item-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      --item-hover-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
     body {
@@ -18,7 +24,7 @@ appConfig:
 
     .section-title {
       font-family: var(--font-headings);
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: var(--primary);
       border-bottom: 3px solid var(--primary);
       padding-bottom: 0.5rem;
@@ -28,35 +34,35 @@ appConfig:
     .home .item-group-container.item-size-large .item-group-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .item-group-container.item-size-large .item {
-      background: linear-gradient(135deg, #312437, #5cdfeb);
+      background: linear-gradient(135deg, #3A2F45, #5cdfeb);
       border-radius: 15px;
       padding: 2rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--item-shadow);
       transition: all 0.3s ease;
-      color: #ffffff;
+      color: var(--item-text-color);
     }
 
     .item-group-container.item-size-large .item:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(135deg, #4285f4, #5cdfeb);
+      box-shadow: var(--item-hover-shadow);
+      background: linear-gradient(135deg, #4285f4, #61dafb);
     }
 
     .item-icon {
       font-size: 4rem;
       margin-bottom: 1rem;
-      color: #ffffff;
+      color: var(--item-text-color);
     }
 
     .item-title {
       font-family: var(--font-headings);
       font-size: 1.6rem;
       font-weight: bold;
-      color: #ffffff;
+      color: var(--item-text-color);
       margin-bottom: 0.5rem;
     }
 
@@ -72,16 +78,17 @@ appConfig:
     }
 
     .item-group-container:not(.item-size-large) .item {
-      background: #ffffff;
+      background: var(--item-background-color);
       border-radius: 10px;
       padding: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--item-shadow);
       transition: all 0.2s ease;
     }
 
     .item-group-container:not(.item-size-large) .item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--item-hover-shadow);
+      background: var(--item-background-hover-color);
     }
 
     @media screen and (max-width: 768px) {
@@ -104,7 +111,7 @@ sections:
         url: https://app.hltcorp.com/admin/prompts
       - title: Item Improvement
         description: 12 AI suggestions to improve any content
-        icon: fas fa-wand-magic-sparkles
+        icon: fas fa-magic
         url: https://app.hltcorp.com/admin/prompts
       - title: Polish CSRs
         description: Refine NCLEX CSRs with AI
@@ -112,7 +119,7 @@ sections:
         url: https://app.hltcorp.com/admin/prompts
       - title: Revamp CSRs
         description: Completely overhaul CSRs using AI
-        icon: fas fa-sync-alt
+        icon: fas fa-sync
         url: https://app.hltcorp.com/admin/prompts
       - title: Polish Rationale
         description: Enhance rationale and key takeaways
@@ -171,7 +178,7 @@ sections:
     icon: fas fa-flask
     displayData:
       cols: 2
-      itemSize: small
+      itemSize: medium
       sectionLayout: grid
     items:
       - title: AI Agents Guide
@@ -180,4 +187,30 @@ sections:
         url: "#"
       - title: Prompt Engineering
         description: Best practices for creating effective prompts
-        icon: fas fa-pencil
+        icon: fas fa-pencil-ruler
+        url: "#"
+      - title: Translator
+        description: AI-powered language translation
+        icon: fas fa-language
+        url: "#"
+      - title: Motivational Chatbot
+        description: AI-driven motivational conversations
+        icon: fas fa-comments
+        url: "#"
+      - title: Streamlit Website Generator
+        description: AI-assisted website creation with Streamlit
+        icon: fas fa-laptop-code
+        url: "#"
+
+widgets:
+  - name: Lottie Animation Example
+    widgetType: customHtml
+    content: |
+      <div id="lottie-animation" style="width: 100%; height: 400px;"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+      <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('lottie-animation'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true

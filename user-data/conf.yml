@@ -3,17 +3,18 @@ appConfig:
   customCss: |
     :root {
       --primary: #3A2F45;
-      --background: #121212;
-      --background-darker: #20232a;
+      --background: #1c1c1c;
+      --background-darker: #121212;
       --font-headings: "Francois One", serif;
       --font-body: "Raleway", sans-serif;
       --font-monospace: "PT Mono", "Courier New", monospace;
       --item-text-color: #ffffff;
       --item-background-color: #282c34;
-      --item-background-hover-color: #404854;
+      --item-background-hover-color: #3a3f47;
       --item-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
       --item-hover-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
       --section-padding: 20px;
+      --small-item-width: 180px;
     }
 
     body {
@@ -29,11 +30,12 @@ appConfig:
       border-bottom: 3px solid var(--primary);
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .home .item-group-container.item-size-large .item-group-grid {
       display: grid !important;
-      grid-template-columns: repeat(2, 1fr);  /* Two columns for larger cards */
+      grid-template-columns: repeat(2, 1fr);  
       gap: 2rem;
     }
 
@@ -45,6 +47,7 @@ appConfig:
       transition: all 0.3s ease;
       color: var(--item-text-color);
       font-size: 1.8rem;
+      text-align: center;
     }
 
     .item-group-container.item-size-large .item:hover {
@@ -74,23 +77,36 @@ appConfig:
 
     .item-group-container:not(.item-size-large) .item-group-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  /* Smaller boxes for tools */
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
     }
 
     .item-group-container:not(.item-size-large) .item {
       background: var(--item-background-color);
       border-radius: 10px;
-      padding: 1rem;
+      padding: 1.5rem;
       box-shadow: var(--item-shadow);
       transition: all 0.2s ease;
       font-size: 1.2rem;
+      text-align: center;
     }
 
     .item-group-container:not(.item-size-large) .item:hover {
       transform: translateY(-5px);
       box-shadow: var(--item-hover-shadow);
       background: var(--item-background-hover-color);
+    }
+
+    .item-group-container.item-size-small .item {
+      max-width: var(--small-item-width);
+    }
+
+    .item-group-container.item-size-small .item .item-title {
+      font-size: 1.4rem;
+    }
+
+    .item-group-container.item-size-small .item .item-icon {
+      font-size: 3rem;
     }
 
     @media screen and (max-width: 768px) {
@@ -148,7 +164,7 @@ sections:
     icon: mdi-tools
     displayData:
       cols: 4
-      itemSize: small
+      itemSize: medium
       sectionLayout: grid
     items:
       - title: Dify
@@ -179,8 +195,8 @@ sections:
   - name: Resources & Experimental
     icon: mdi-flask-outline
     displayData:
-      cols: 2
-      itemSize: medium
+      cols: 3
+      itemSize: small
       sectionLayout: grid
     items:
       - title: AI Agents Guide

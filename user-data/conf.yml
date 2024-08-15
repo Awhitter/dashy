@@ -220,4 +220,12 @@ sections:
     icon: mdi-flask-outline
     displayData:
       cols: 1
-      itemSize;
+      itemSize: small
+      sectionLayout: grid
+    items:
+      - title: Prototype 1
+        icon: mdi-flask
+        url: "#"
+      - title: Prototype 2
+        icon: mdi-flask
+        url: "#"

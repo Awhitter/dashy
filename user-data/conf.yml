@@ -13,6 +13,7 @@ appConfig:
     body {
       font-family: var(--font-body);
       background: var(--background);
+      color: var(--primary);
     }
 
     .section-title {
@@ -31,54 +32,62 @@ appConfig:
     }
 
     .item-group-container.item-size-large .item {
-      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      background: linear-gradient(135deg, #312437, #5cdfeb);
       border-radius: 15px;
-      padding: 1.5rem;
+      padding: 2rem;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
+      color: #ffffff;
     }
 
     .item-group-container.item-size-large .item:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #4285f4, #5cdfeb);
     }
 
     .item-icon {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 1rem;
-      color: var(--primary);
+      color: #ffffff;
     }
 
     .item-title {
       font-family: var(--font-headings);
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: bold;
-      color: var(--primary);
+      color: #ffffff;
       margin-bottom: 0.5rem;
     }
 
     .item-description {
-      font-size: 1rem;
-      color: #666;
+      font-size: 1.1rem;
+      color: #e0e0e0;
     }
 
     .item-group-container:not(.item-size-large) .item-group-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
     .item-group-container:not(.item-size-large) .item {
       background: #ffffff;
       border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: all 0.2s ease;
     }
 
     .item-group-container:not(.item-size-large) .item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 768px) {
+      .home .item-group-container.item-size-large .item-group-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
 sections:
@@ -162,7 +171,7 @@ sections:
     icon: fas fa-flask
     displayData:
       cols: 2
-      itemSize: medium
+      itemSize: small
       sectionLayout: grid
     items:
       - title: AI Agents Guide
@@ -171,17 +180,4 @@ sections:
         url: "#"
       - title: Prompt Engineering
         description: Best practices for creating effective prompts
-        icon: fas fa-pencil-ruler
-        url: "#"
-      - title: Translator
-        description: AI-powered language translation
-        icon: fas fa-language
-        url: "#"
-      - title: Motivational Chatbot
-        description: AI-driven motivational conversations
-        icon: fas fa-comments
-        url: "#"
-      - title: Streamlit Website Generator
-        description: AI-assisted website creation with Streamlit
-        icon: fas fa-laptop-code
-        url: "#"
+        icon: fas fa-pencil

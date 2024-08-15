@@ -15,6 +15,7 @@ appConfig:
       --item-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       --section-padding: 15px;
       --small-item-width: 200px;
+      --medium-item-width: 220px;
       --large-item-width: 280px;
       --large-item-height: 200px;
     }
@@ -37,7 +38,7 @@ appConfig:
 
     .home .item-group-container.item-size-large .item-group-grid {
       display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(var(--large-item-width), 1fr));
       gap: 1.2rem;
       padding: var(--section-padding);
     }
@@ -50,9 +51,9 @@ appConfig:
       transition: all 0.3s ease;
       color: var(--item-text-color);
       font-size: 1.4rem;
-      text-align: center;
+      text-align: left;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       max-width: var(--large-item-width);
       min-height: var(--large-item-height);
@@ -65,29 +66,29 @@ appConfig:
       background: linear-gradient(135deg, #4A4D6A, #60638B);
     }
 
-    .item-icon {
-      font-size: 3.5rem;
-      margin-bottom: 0.8rem;
+    .item-group-container.item-size-large .item-icon {
+      font-size: 3rem;
+      margin-right: 1rem;
       color: var(--item-text-color);
     }
 
-    .item-title {
+    .item-group-container.item-size-large .item-title {
       font-family: var(--font-headings);
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: bold;
       color: var(--item-text-color);
       margin-bottom: 0.4rem;
     }
 
-    .item-description {
-      font-size: 1rem;
+    .item-group-container.item-size-large .item-description {
+      font-size: 0.9rem;
       color: #C0C0C0;
       white-space: normal;
     }
 
     .item-group-container:not(.item-size-large) .item-group-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(var(--medium-item-width), 1fr));
       gap: 1rem;
       padding: var(--section-padding);
     }
@@ -95,15 +96,15 @@ appConfig:
     .item-group-container:not(.item-size-large) .item {
       background: var(--item-background-color);
       border-radius: 10px;
-      padding: 1.2rem;
+      padding: 1rem;
       box-shadow: var(--item-shadow);
       transition: all 0.2s ease;
-      font-size: 1.2rem;
-      text-align: center;
+      font-size: 1rem;
+      text-align: left;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      max-width: var(--small-item-width);
+      max-width: var(--medium-item-width);
       word-wrap: break-word;
     }
 
@@ -113,9 +114,30 @@ appConfig:
       background: var(--item-background-hover-color);
     }
 
+    .item-group-container:not(.item-size-large) .item-icon {
+      font-size: 1.5rem;
+      margin-right: 0.8rem;
+      color: var(--item-text-color);
+    }
+
+    .item-group-container:not(.item-size-large) .item-title {
+      font-family: var(--font-headings);
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--item-text-color);
+    }
+
+    .item-group-container:not(.item-size-large) .item-description {
+      display: none;
+    }
+
     @media screen and (max-width: 768px) {
-      .home .item-group-container.item-size-large .item-group-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .home .item-group-container .item-group-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .item-group-container .item {
+        max-width: 100%;
       }
     }
 

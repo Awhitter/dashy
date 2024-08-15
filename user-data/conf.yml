@@ -14,9 +14,9 @@ appConfig:
       --item-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       --item-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       --section-padding: 15px;
-      --small-item-width: 180px;
-      --large-item-width: 260px;
-      --large-item-height: 180px;
+      --small-item-width: 200px;
+      --large-item-width: 280px;
+      --large-item-height: 200px;
     }
 
     body {
@@ -37,7 +37,7 @@ appConfig:
 
     .home .item-group-container.item-size-large .item-group-grid {
       display: grid !important;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.2rem;
       padding: var(--section-padding);
     }
@@ -123,7 +123,7 @@ sections:
   - name: AI Agents
     icon: mdi-brain
     displayData:
-      cols: 3
+      cols: 2
       itemSize: large
       sectionLayout: grid
     items:
@@ -199,7 +199,7 @@ sections:
   - name: Resources
     icon: mdi-book-open-page-variant
     displayData:
-      cols: 3
+      cols: 1
       itemSize: small
       sectionLayout: grid
     items:
@@ -219,15 +219,5 @@ sections:
   - name: Prototypes
     icon: mdi-flask-outline
     displayData:
-      cols: 3
-      itemSize: small
-      sectionLayout: grid
-    items:
-      - title: Motivational Chatbot
-        description: "AI-driven motivational conversations"
-        icon: mdi-message-reply-text
-        url: "#"
-      - title: Streamlit Website Generator
-        description: "AI-assisted website creation with Streamlit"
-        icon: mdi-laptop-mac
-        url: "#"
+      cols: 1
+      itemSize

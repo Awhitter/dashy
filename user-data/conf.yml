@@ -132,39 +132,39 @@ sections:
       sectionLayout: grid
     items:
       - title: Apply Writing Guidelines
-        description: Enhance rationales with AI writing guidelines
+        description: "Enhance rationales with AI writing guidelines"
         icon: mdi-pencil
         url: https://app.hltcorp.com/admin/prompts
       - title: Item Improvement
-        description: 12 AI suggestions to improve any content
+        description: "12 AI suggestions to improve any content"
         icon: mdi-wand
         url: https://app.hltcorp.com/admin/prompts
       - title: Polish CSRs
-        description: Refine NCLEX CSRs with AI
+        description: "Refine NCLEX CSRs with AI"
         icon: mdi-file-document-box
         url: https://app.hltcorp.com/admin/prompts
       - title: Revamp CSRs
-        description: Completely overhaul CSRs using AI
+        description: "Completely overhaul CSRs using AI"
         icon: mdi-sync
         url: https://app.hltcorp.com/admin/prompts
       - title: Polish Rationale
-        description: Enhance rationale and key takeaways
+        description: "Enhance rationale and key takeaways"
         icon: mdi-star-half
         url: https://app.hltcorp.com/admin/prompts
       - title: Revamp Rationale
-        description: Completely overhaul rationale and key takeaways
+        description: "Completely overhaul rationale and key takeaways"
         icon: mdi-lightbulb-on
         url: https://app.hltcorp.com/admin/prompts
       - title: FNP QOTD
-        description: Full prompt for FNP question of the day
+        description: "Full prompt for FNP question of the day"
         icon: mdi-stethoscope
         url: https://app.hltcorp.com/admin/prompts
       - title: NCLEX RN QOTD
-        description: NCLEX RN question of the day notifications
+        description: "NCLEX RN question of the day notifications"
         icon: mdi-heart-pulse
         url: https://app.hltcorp.com/admin/prompts
       - title: ASVAB QOTD
-        description: ASVAB question of the day notifications
+        description: "ASVAB question of the day notifications"
         icon: mdi-fighter-jet
         url: https://app.hltcorp.com/admin/prompts
 
@@ -200,30 +200,38 @@ sections:
         icon: mdi-spider-web
         url: https://apify.com/
 
-  - name: Resources & Experimental
-    icon: mdi-flask-outline
+  - name: Resources
+    icon: mdi-book-open-page-variant
     displayData:
       cols: 3
       itemSize: small
       sectionLayout: grid
     items:
       - title: AI Agents Guide
-        description: Comprehensive overview of AI agents
+        description: "Comprehensive overview of AI agents"
         icon: mdi-book-open-page-variant
         url: "#"
       - title: Prompt Engineering
-        description: Best practices for creating effective prompts
+        description: "Best practices for creating effective prompts"
         icon: mdi-pencil-ruler
         url: "#"
       - title: Translator
-        description: AI-powered language translation
+        description: "AI-powered language translation"
         icon: mdi-translate
         url: "#"
+
+  - name: Prototypes
+    icon: mdi-flask-outline
+    displayData:
+      cols: 3
+      itemSize: small
+      sectionLayout: grid
+    items:
       - title: Motivational Chatbot
-        description: AI-driven motivational conversations
+        description: "AI-driven motivational conversations"
         icon: mdi-message-reply-text
         url: "#"
       - title: Streamlit Website Generator
-        description: AI-assisted website creation with Streamlit
+        description: "AI-assisted website creation with Streamlit"
         icon: mdi-laptop-mac
-        url: "#
+        url: "#"

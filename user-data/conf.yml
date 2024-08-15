@@ -1,8 +1,12 @@
 {
   "pageInfo": {
     "title": "AI Mastery Hub",
-    "description": "Your central dashboard for AI agents, tools, and resources",
+    "description": "Your ultimate dashboard for AI agents, tools, resources, and beyond",
     "navLinks": [
+      {
+        "title": "Home",
+        "path": "/"
+      },
       {
         "title": "Agents",
         "path": "/agents"
@@ -19,10 +23,27 @@
         "title": "Prototypes",
         "path": "/prototypes"
       }
-    ]
+    ],
+    "footerText": "AI Mastery Hub - Empowering your AI journey"
   },
   "appConfig": {
-    "theme": "deep-ocean",
+    "theme": "nord",
+    "customColors": {
+      "primary": "#88C0D0",
+      "background": "#2E3440",
+      "backgroundDarker": "#3B4252",
+      "success": "#A3BE8C",
+      "info": "#81A1C1",
+      "warning": "#EBCB8B",
+      "danger": "#BF616A"
+    },
+    "layout": "vertical",
+    "iconSize": "large",
+    "language": "en",
+    "startingView": "default",
+    "statusCheck": true,
+    "statusCheckInterval": 300,
+    "faviconApi": "allesedv",
     "auth": {
       "users": [
         {
@@ -32,19 +53,21 @@
         }
       ]
     },
-    "layout": "auto",
-    "iconSize": "large",
-    "customColors": {
-      "primary": "#aabbc3",
-      "background": "#151e2d",
-      "backgroundDarker": "#151c29",
-      "itemBackground": "rgba(74,252,255,0.1)",
-      "itemBackgroundHover": "rgba(74,252,255,0.25)",
-      "itemTextColor": "#aabbc3",
-      "itemTextColorHover": "rgba(74,252,255,0.7)"
-    }
+    "enableFontAwesome": true,
+    "fontAwesomeKey": "2e949c5bf4",
+    "enableMaterialDesignIcons": true,
+    "hideComponents": {
+      "hideSettings": false,
+      "hideFooter": false
+    },
+    "cssThemes": ["nord", "nord-frost", "colorful", "dracula", "material"],
+    "customCss": ".item-icon { filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2)); transition: all 0.3s ease; } .item-icon:hover { transform: scale(1.1); }"
   },
   "pages": [
+    {
+      "name": "Home",
+      "path": "home.yml"
+    },
     {
       "name": "Agents",
       "path": "agents.yml"
@@ -58,8 +81,235 @@
       "path": "resources.yml"
     },
     {
-      "name": "Prototypes & Demos",
+      "name": "Prototypes",
       "path": "prototypes.yml"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Quick Access",
+      "icon": "fas fa-bolt",
+      "displayData": {
+        "cols": 5,
+        "itemSize": "medium"
+      },
+      "items": [
+        {
+          "title": "Flowwise",
+          "description": "Visual AI workflow builder",
+          "icon": "https://flowiseai.com/_next/image?url=%2Flogo.png&w=32&q=75",
+          "url": "https://flowiseai-railway-production-8413.up.railway.app/",
+          "target": "newtab",
+          "statusCheck": true,
+          "statusCheckAllowInsecure": true
+        },
+        {
+          "title": "Apply Writing Guidelines",
+          "description": "Enhance content with AI",
+          "icon": "far fa-edit",
+          "url": "https://app.hltcorp.com/admin/prompts",
+          "target": "newtab",
+          "statusCheck": true
+        },
+        {
+          "title": "Item Improvement",
+          "description": "AI-powered content refinement",
+          "icon": "fas fa-magic",
+          "url": "https://app.hltcorp.com/admin/prompts",
+          "target": "newtab",
+          "statusCheck": true
+        },
+        {
+          "title": "QOTD Generator",
+          "description": "AI Question of the Day",
+          "icon": "fas fa-question-circle",
+          "url": "https://app.hltcorp.com/admin/prompts",
+          "target": "newtab",
+          "statusCheck": true
+        },
+        {
+          "title": "Resources",
+          "description": "AI learning materials",
+          "icon": "fas fa-books",
+          "url": "/resources",
+          "target": "sametab"
+        }
+      ]
+    },
+    {
+      "name": "AI Agent Hub",
+      "icon": "fas fa-robot",
+      "displayData": {
+        "cols": 2,
+        "itemSize": "large"
+      },
+      "items": [
+        {
+          "title": "Content Creation Suite",
+          "icon": "fas fa-feather",
+          "url": "/agents#content-creation",
+          "description": "AI-powered tools for generating various content types",
+          "target": "sametab"
+        },
+        {
+          "title": "Research & Analysis",
+          "icon": "fas fa-microscope",
+          "url": "/agents#research",
+          "description": "AI-powered research and data analysis tools",
+          "target": "sametab"
+        },
+        {
+          "title": "Language & Communication",
+          "icon": "fas fa-language",
+          "url": "/agents#language",
+          "description": "AI tools for language processing and translation",
+          "target": "sametab"
+        },
+        {
+          "title": "Visual Content Tools",
+          "icon": "fas fa-palette",
+          "url": "/agents#visual",
+          "description": "AI agents for creating visual elements",
+          "target": "sametab"
+        }
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "icon": "fas fa-code",
+      "displayData": {
+        "sortBy": "most-used",
+        "cols": 3,
+        "itemSize": "medium"
+      },
+      "items": [
+        {
+          "title": "V0 by Vercel",
+          "description": "AI-powered interface design",
+          "icon": "https://v0.dev/favicon.ico",
+          "url": "https://v0.dev/",
+          "target": "newtab"
+        },
+        {
+          "title": "GitHub Copilot",
+          "description": "AI pair programmer",
+          "icon": "fab fa-github",
+          "url": "https://github.com/features/copilot",
+          "target": "newtab"
+        },
+        {
+          "title": "ChatGPT",
+          "description": "Conversational AI assistant",
+          "icon": "fas fa-comment-alt",
+          "url": "https://chat.openai.com/",
+          "target": "newtab"
+        },
+        {
+          "title": "Anthropic Claude",
+          "description": "Advanced AI language model",
+          "icon": "https://www.anthropic.com/favicon.ico",
+          "url": "https://www.anthropic.com",
+          "target": "newtab"
+        },
+        {
+          "title": "Hugging Face",
+          "description": "AI model hub and tools",
+          "icon": "fas fa-hugs",
+          "url": "https://huggingface.co/",
+          "target": "newtab"
+        },
+        {
+          "title": "Gradio",
+          "description": "Create UIs for ML models",
+          "icon": "https://gradio.app/assets/img/logo.svg",
+          "url": "https://gradio.app/",
+          "target": "newtab"
+        }
+      ]
+    },
+    {
+      "name": "Learning Resources",
+      "icon": "fas fa-graduation-cap",
+      "displayData": {
+        "sortBy": "alphabetical",
+        "cols": 2,
+        "collapsed": true
+      },
+      "items": [
+        {
+          "title": "Fast.ai",
+          "description": "Making neural nets uncool again",
+          "icon": "https://course.fast.ai/images/favicon.ico",
+          "url": "https://www.fast.ai/",
+          "target": "newtab"
+        },
+        {
+          "title": "DeepLearning.AI",
+          "description": "AI courses and specializations",
+          "icon": "https://www.deeplearning.ai/favicon.ico",
+          "url": "https://www.deeplearning.ai/",
+          "target": "newtab"
+        },
+        {
+          "title": "Machine Learning Mastery",
+          "description": "Learn machine learning the right way",
+          "icon": "https://machinelearningmastery.com/wp-content/uploads/2016/09/cropped-MachineLearningMastery-Favicon-1-192x192.png",
+          "url": "https://machinelearningmastery.com/",
+          "target": "newtab"
+        },
+        {
+          "title": "Towards Data Science",
+          "description": "AI and data science articles",
+          "icon": "https://miro.medium.com/v2/1*m-R_BkNf1Qjr1YbyOIJY2w.png",
+          "url": "https://towardsdatascience.com/",
+          "target": "newtab"
+        }
+      ]
+    },
+    {
+      "name": "Alec's Top 10 to Explore",
+      "icon": "fas fa-lightbulb",
+      "displayData": {
+        "cols": 2,
+        "itemSize": "medium"
+      },
+      "items": [
+        {
+          "title": "Auto-GPT",
+          "description": "Autonomous GPT-4 experiment",
+          "icon": "https://github.com/Significant-Gravitas/Auto-GPT/raw/master/autogpt/web/static/favicon.ico",
+          "url": "https://github.com/Significant-Gravitas/Auto-GPT",
+          "target": "newtab"
+        },
+        {
+          "title": "GPT-4 All Tool Caller",
+          "description": "Universal AI tool integration",
+          "icon": "fas fa-tools",
+          "url": "#",
+          "target": "newtab"
+        },
+        {
+          "title": "AI-powered Code Reviewer",
+          "description": "Automated code quality checks",
+          "icon": "fas fa-code-branch",
+          "url": "#",
+          "target": "newtab"
+        },
+        {
+          "title": "Multimodal AI Assistant",
+          "description": "Text, image, and voice AI",
+          "icon": "fas fa-desktop",
+          "url": "#",
+          "target": "newtab"
+        },
+        {
+          "title": "AI Ethics Analyzer",
+          "description": "Ethical implications of AI systems",
+          "icon": "fas fa-balance-scale",
+          "url": "#",
+          "target": "newtab"
+        }
+      ]
     }
   ]
 }

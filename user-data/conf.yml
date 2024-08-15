@@ -1,5 +1,5 @@
 appConfig:
-  theme: material
+  theme: custom
   customCss: |
     :root {
       --primary: #312437;
@@ -27,7 +27,7 @@ appConfig:
       gap: 1.5rem;
     }
     .item-group-container.item-size-large .item {
-      background: #ffffff;
+      background: linear-gradient(135deg, #ffffff, #f0f0f0);
       border-radius: 15px;
       padding: 1.5rem;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);

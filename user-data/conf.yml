@@ -16,8 +16,8 @@ appConfig:
       --section-padding: 15px;
       --small-item-width: 200px;
       --medium-item-width: 220px;
-      --large-item-width: 280px;
-      --large-item-height: 200px;
+      --large-item-width: 400px;
+      --large-item-height: 250px;
     }
 
     body {
@@ -28,30 +28,30 @@ appConfig:
 
     .section-title {
       font-family: var(--font-headings);
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       color: var(--primary);
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.4rem;
-      margin-bottom: 1.2rem;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
 
     .home .item-group-container .item-group-grid {
       display: grid !important;
-      gap: 1.2rem;
+      gap: 1.5rem;
       padding: var(--section-padding);
     }
 
     .item-group-container .item {
       background: linear-gradient(135deg, #3A3D5A, #50538B);
-      border-radius: 12px;
-      padding: 1rem;
+      border-radius: 15px;
+      padding: 1.5rem;
       box-shadow: var(--item-shadow);
       transition: all 0.3s ease;
       color: var(--item-text-color);
       text-align: left;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       word-wrap: break-word;
     }
 
@@ -65,45 +65,34 @@ appConfig:
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 1rem;
+      margin-bottom: 1rem;
       color: var(--item-text-color);
+      font-size: 3rem;
     }
 
     .item-group-container .item-title {
       font-family: var(--font-headings);
       font-weight: bold;
       color: var(--item-text-color);
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
     }
 
     .item-group-container .item-description {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: #C0C0C0;
       white-space: normal;
+      line-height: 1.4;
     }
 
     /* Large items */
     .item-group-container.item-size-large .item-group-grid {
-      grid-template-columns: repeat(auto-fit, minmax(var(--large-item-width), 1fr));
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .item-group-container.item-size-large .item {
-      flex-direction: row;
-      padding: 1.5rem;
+      padding: 2rem;
       min-height: var(--large-item-height);
-    }
-
-    .item-group-container.item-size-large .item-icon {
-      font-size: 2.5rem;
-      min-width: 3rem;
-    }
-
-    .item-group-container.item-size-large .item-title {
-      font-size: 1.4rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .item-group-container.item-size-large .item-description {
-      display: block;
     }
 
     /* Medium items */
@@ -112,21 +101,15 @@ appConfig:
     }
 
     .item-group-container.item-size-medium .item {
-      flex-direction: row;
-      padding: 0.8rem;
+      padding: 1.2rem;
     }
 
     .item-group-container.item-size-medium .item-icon {
-      font-size: 1.8rem;
-      min-width: 2.5rem;
+      font-size: 2.2rem;
     }
 
     .item-group-container.item-size-medium .item-title {
-      font-size: 1.1rem;
-    }
-
-    .item-group-container.item-size-medium .item-description {
-      display: none;
+      font-size: 1.3rem;
     }
 
     /* Small items */
@@ -135,21 +118,15 @@ appConfig:
     }
 
     .item-group-container.item-size-small .item {
-      flex-direction: row;
-      padding: 0.5rem;
+      padding: 1rem;
     }
 
     .item-group-container.item-size-small .item-icon {
-      font-size: 1.2rem;
-      min-width: 1.8rem;
+      font-size: 1.8rem;
     }
 
     .item-group-container.item-size-small .item-title {
-      font-size: 0.9rem;
-    }
-
-    .item-group-container.item-size-small .item-description {
-      display: none;
+      font-size: 1.1rem;
     }
 
     @media screen and (max-width: 768px) {
@@ -171,41 +148,55 @@ sections:
       sectionLayout: grid
     items:
       - title: Apply Writing Guidelines
-        description: "Enhance rationales with AI writing guidelines"
+        description: "Enhance rationales with AI writing guidelines. Improve clarity, coherence, and effectiveness of your content using advanced NLP techniques. Perfect for refining educational materials and documentation."
         icon: mdi-pencil
         url: https://app.hltcorp.com/admin/prompts
+        color: "#4CAF50"
       - title: Item Improvement
-        description: "12 AI suggestions to improve any content"
+        description: "Get 12 AI-powered suggestions to enhance any content. Optimize for engagement, readability, and impact across various formats. Ideal for boosting the quality of educational resources and assessments."
         icon: mdi-wand
         url: https://app.hltcorp.com/admin/prompts
+        color: "#2196F3"
       - title: Polish CSRs
-        description: "Refine NCLEX CSRs with AI"
-        icon: mdi-file-document-box
+        description: "Refine NCLEX CSRs with AI assistance. Ensure accuracy, relevance, and alignment with current nursing standards and best practices. Elevate the quality of your clinical scenarios and rationales."
+        icon: mdi-file-document-edit
         url: https://app.hltcorp.com/admin/prompts
+        color: "#9C27B0"
       - title: Revamp CSRs
-        description: "Completely overhaul CSRs using AI"
+        description: "Completely overhaul CSRs using advanced AI algorithms. Transform content to meet evolving educational needs and assessment criteria. Revolutionize your clinical scenarios for enhanced learning outcomes."
         icon: mdi-sync
         url: https://app.hltcorp.com/admin/prompts
+        color: "#FF9800"
       - title: Polish Rationale
-        description: "Enhance rationale and key takeaways"
+        description: "Enhance rationale and key takeaways with AI-driven insights. Improve clarity and educational value of explanations for better learner comprehension. Optimize your educational content for maximum impact."
         icon: mdi-star-half
         url: https://app.hltcorp.com/admin/prompts
+        color: "#E91E63"
       - title: Revamp Rationale
-        description: "Completely overhaul rationale and key takeaways"
+        description: "Completely overhaul rationale and key takeaways using state-of-the-art AI. Restructure content for maximum educational impact and retention. Transform your explanations into powerful learning tools."
         icon: mdi-lightbulb-on
         url: https://app.hltcorp.com/admin/prompts
-      - title: FNP QOTD
-        description: "Full prompt for FNP question of the day"
-        icon: mdi-stethoscope
-        url: https://app.hltcorp.com/admin/prompts
-      - title: NCLEX RN QOTD
-        description: "NCLEX RN question of the day notifications"
-        icon: mdi-heart-pulse
-        url: https://app.hltcorp.com/admin/prompts
-      - title: ASVAB QOTD
-        description: "ASVAB question of the day notifications"
-        icon: mdi-fighter-jet
-        url: https://app.hltcorp.com/admin/prompts
+        color: "#CDDC39"
+
+  - name: Resources
+    icon: mdi-book-open-page-variant
+    displayData:
+      cols: 3
+      itemSize: medium
+      sectionLayout: grid
+    items:
+      - title: AI Agents Guide
+        description: "Comprehensive overview of AI agents and their applications in content creation and enhancement."
+        icon: mdi-book-open-page-variant
+        url: "#"
+      - title: Prompt Engineering
+        description: "Best practices for creating effective prompts to maximize AI output quality and relevance."
+        icon: mdi-pencil-ruler
+        url: "#"
+      - title: Translator
+        description: "AI-powered language translation tool for multilingual content adaptation and localization."
+        icon: mdi-translate
+        url: "#"
 
   - name: AI Tools
     icon: mdi-tools
@@ -215,60 +206,52 @@ sections:
       sectionLayout: grid
     items:
       - title: Dify
+        description: "AI application development platform for creating chatbots and AI assistants."
         icon: mdi-robot
         url: "#"
       - title: Flowrise
-        icon: mdi-diagram-venn
+        description: "Visual AI workflow builder for automating complex AI-driven processes."
+        icon: mdi-diagram-sankey
         url: https://flowiseai-railway-production-8413.up.railway.app/
       - title: Zapier
+        description: "Automation tool for integrating AI services with other applications."
         icon: mdi-lightning-bolt
         url: https://zapier.com/
       - title: OpenUI
+        description: "AI-powered interface design tool for creating user-friendly UIs."
         icon: mdi-palette
         url: "#"
       - title: V0 by Vercel
+        description: "AI-assisted web development platform for rapid prototyping."
         icon: mdi-code-tags
         url: https://v0.dev/
       - title: Aider
+        description: "AI-powered coding assistant for faster and more efficient development."
         icon: mdi-terminal
         url: "#"
       - title: Claude Dev
+        description: "Advanced AI model for natural language processing and generation."
         icon: mdi-brain
         url: "#"
-      - title: Apiify
+      - title: Apify
+        description: "Web scraping and automation platform with AI capabilities."
         icon: mdi-spider-web
         url: https://apify.com/
 
-  - name: Resources
-    icon: mdi-book-open-page-variant
-    displayData:
-      cols: 1
-      itemSize: small
-      sectionLayout: grid
-    items:
-      - title: AI Agents Guide
-        description: "Comprehensive overview of AI agents"
-        icon: mdi-book-open-page-variant
-        url: "#"
-      - title: Prompt Engineering
-        description: "Best practices for creating effective prompts"
-        icon: mdi-pencil-ruler
-        url: "#"
-      - title: Translator
-        description: "AI-powered language translation"
-        icon: mdi-translate
-        url: "#"
-
-  - name: Prototypes
+  - name: Experiments
     icon: mdi-flask-outline
     displayData:
-      cols: 1
-      itemSize: small
+      cols: 2
+      itemSize: medium
       sectionLayout: grid
     items:
       - title: Prototype 1
+        description: "Experimental AI model for content generation (In Progress)"
         icon: mdi-flask
         url: "#"
+        statusIndicator: "🔬 Testing"
       - title: Prototype 2
-        icon: mdi-flask
+        description: "AI-driven user behavior analysis tool (Early Development)"
+        icon: mdi-flask-empty-outline
         url: "#"
+        statusIndicator: "🚧 Development"

@@ -1,51 +1,22 @@
-FROM node:18.19.1-alpine AS BUILD_IMAGE
+FROM node:14-alpine
 
-# Set the platform to build image for
-ARG TARGETPLATFORM
-ENV TARGETPLATFORM=${TARGETPLATFORM:-linux/amd64}
+# Install dependencies
+RUN apk add --no-cache git
 
-# Install additional tools needed if on arm64 / armv7
-RUN \
-  case "${TARGETPLATFORM}" in \
-  'linux/arm64') apk add --no-cache python3 make g++ ;; \
-  'linux/arm/v7') apk add --no-cache python3 make g++ ;; \
-  esac
-
-# Create and set the working directory
+# Set working directory
 WORKDIR /app
 
+# Clone Dashy repository
+RUN git clone https://github.com/Lissy93/dashy.git .
+
 # Install app dependencies
-COPY package.json yarn.lock ./
-RUN yarn install --ignore-engines --immutable --no-cache --network-timeout 300000 --network-concurrency 1
+RUN yarn install
 
-# Copy over all project files and folders to the working directory
-COPY . ./
+# Build the app
+RUN yarn build
 
-# Build initial app for production
-RUN yarn build --mode production --no-clean
+# Expose the port the app runs on
+EXPOSE 8080
 
-# Production stage
-FROM node:20.11.1-alpine3.19
-
-# Define some ENV Vars
-ENV PORT=8080 \
-  DIRECTORY=/app \
-  IS_DOCKER=true
-
-# Create and set the working directory
-WORKDIR ${DIRECTORY}
-
-# Update tzdata for setting timezone
-RUN apk add --no-cache tzdata
-
-# Copy built application from build phase
-COPY --from=BUILD_IMAGE /app ./
-
-# Finally, run start command to serve up the built application
-CMD [ "yarn", "build-and-start" ]
-
-# Expose the port
-EXPOSE ${PORT}
-
-# Run simple healthchecks every 5 mins, to check that everythings still great
-HEALTHCHECK --interval=5m --timeout=5s --start-period=30s CMD yarn health-check
+# Start the app
+CMD ["yarn", "start"]

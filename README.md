@@ -10,18 +10,28 @@ This is a customized version of Dashy, focused on AI agents and resources.
    cd dashy
    ```
 
-2. Build and run the Docker container:
+2. Install dependencies:
    ```
-   docker-compose up -d
+   yarn install
    ```
 
-3. Access the dashboard at `http://localhost:8080`
+3. Build the application:
+   ```
+   yarn build
+   ```
+
+4. Start the server:
+   ```
+   yarn start
+   ```
+
+5. Access the dashboard at `http://localhost:4000` (or the URL provided in the console output)
 
 ## Features
 
 - Sleek and stylish design for showcasing AI agents and resources
 - Persistent data storage
-- Easy deployment with Docker
+- Easy deployment
 
 ## GitHub Repository
 
@@ -37,7 +47,7 @@ The project is automatically deployed to Netlify:
 ## Configuration
 
 - Edit the `user-data/conf.yml` file to customize your dashboard
-- Changes will persist across container restarts
+- Changes will persist across server restarts
 
 ## Support
 

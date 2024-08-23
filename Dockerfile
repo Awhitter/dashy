@@ -1,16 +1,15 @@
 FROM node:14-alpine
 
-# Install dependencies
-RUN apk add --no-cache git
-
-# Set working directory
 WORKDIR /app
 
-# Clone Dashy repository
-RUN git clone https://github.com/Lissy93/dashy.git .
+# Copy package.json and yarn.lock
+COPY package.json yarn.lock ./
 
-# Install app dependencies
-RUN yarn install
+# Install dependencies
+RUN yarn install --frozen-lockfile
+
+# Copy the rest of the application
+COPY . .
 
 # Build the app
 RUN yarn build

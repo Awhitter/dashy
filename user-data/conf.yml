@@ -1,257 +1,181 @@
+pageInfo:
+  title: AI Agents Hub
+  description: Central hub for AI agents, tools, and resources
+  navLinks:
+    - title: GitHub
+      path: https://github.com/your-repo
+    - title: Documentation
+      path: https://your-docs-site.com
+
 appConfig:
-  theme: custom
+  theme: dashy-docs
+  layout: auto
+  iconSize: medium
+  statusCheck: false
+  hideComponents:
+    hideSearch: false
   customCss: |
     :root {
-      --primary: #2B2D42;
-      --background: #1A1C24;
-      --background-darker: #14161C;
-      --font-headings: "Montserrat", sans-serif;
-      --font-body: "Roboto", sans-serif;
-      --font-monospace: "Source Code Pro", monospace;
-      --item-text-color: #E0E0E0;
-      --item-background-color: #3A3D5A;
-      --item-background-hover-color: #50538B;
-      --item-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      --item-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      --section-padding: 15px;
-      --small-item-width: 200px;
-      --medium-item-width: 220px;
-      --large-item-width: 400px;
-      --large-item-height: 250px;
+      --primary: #f5f6f7;
+      --background: #202020;
+      --background-darker: #121212;
+      --card-background: #16213e;
+      --card-background-hover: #1f3a5f;
+      --card-text: #ffffff;
+      --card-text-hover: #4a90e2;
+      --writing-agents-color: #4CAF50;
+      --csr-agents-color: #FFC107;
+      --rationale-agents-color: #FF5722;
+      --resources-color: #2196F3;
+      --tools-color: #3498db;
+      --accent-color: #3498db;
     }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--background);
-      color: var(--item-text-color);
-    }
-
-    .section-title {
-      font-family: var(--font-headings);
-      font-size: 2.8rem;
-      color: var(--primary);
-      border-bottom: 3px solid var(--primary);
-      padding-bottom: 0.6rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .home .item-group-container .item-group-grid {
-      display: grid !important;
-      gap: 1.5rem;
-      padding: var(--section-padding);
-    }
-
-    .item-group-container .item {
-      background: linear-gradient(135deg, #3A3D5A, #50538B);
-      border-radius: 15px;
-      padding: 1.5rem;
-      box-shadow: var(--item-shadow);
+    .item {
       transition: all 0.3s ease;
-      color: var(--item-text-color);
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      word-wrap: break-word;
+      border-radius: 8px;
+      overflow: hidden;
     }
-
-    .item-group-container .item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--item-hover-shadow);
-      background: linear-gradient(135deg, #4A4D6A, #60638B);
+    .item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    .item-group-container .item-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .item-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    .category-title {
+      font-size: 24px;
       margin-bottom: 1rem;
-      color: var(--item-text-color);
-      font-size: 3rem;
+      color: var(--primary);
     }
-
-    .item-group-container .item-title {
-      font-family: var(--font-headings);
+    .start-item {
+      font-size: 1.2rem;
       font-weight: bold;
-      color: var(--item-text-color);
-      font-size: 1.6rem;
-      margin-bottom: 0.6rem;
     }
-
-    .item-group-container .item-description {
-      font-size: 1rem;
-      color: #C0C0C0;
-      white-space: normal;
-      line-height: 1.4;
+    .see-more-btn {
+      background-color: var(--accent-color);
+      color: var(--card-text);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
     }
-
-    /* Large items */
-    .item-group-container.item-size-large .item-group-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .item-group-container.item-size-large .item {
-      padding: 2rem;
-      min-height: var(--large-item-height);
-    }
-
-    /* Medium items */
-    .item-group-container.item-size-medium .item-group-grid {
-      grid-template-columns: repeat(auto-fit, minmax(var(--medium-item-width), 1fr));
-    }
-
-    .item-group-container.item-size-medium .item {
-      padding: 1.2rem;
-    }
-
-    .item-group-container.item-size-medium .item-icon {
-      font-size: 2.2rem;
-    }
-
-    .item-group-container.item-size-medium .item-title {
-      font-size: 1.3rem;
-    }
-
-    /* Small items */
-    .item-group-container.item-size-small .item-group-grid {
-      grid-template-columns: repeat(auto-fit, minmax(var(--small-item-width), 1fr));
-    }
-
-    .item-group-container.item-size-small .item {
-      padding: 1rem;
-    }
-
-    .item-group-container.item-size-small .item-icon {
-      font-size: 1.8rem;
-    }
-
-    .item-group-container.item-size-small .item-title {
-      font-size: 1.1rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .home .item-group-container .item-group-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .item-group-container .item {
-        max-width: 100%;
-      }
+    .see-more-btn:hover {
+      background-color: var(--card-background-hover);
     }
 
 sections:
-  - name: AI Agents
-    icon: mdi-brain
-    displayData:
-      cols: 2
-      itemSize: large
-      sectionLayout: grid
-    items:
-      - title: Apply Writing Guidelines
-        description: "Enhance rationales with AI writing guidelines. Improve clarity, coherence, and effectiveness of your content using advanced NLP techniques. Perfect for refining educational materials and documentation."
-        icon: mdi-pencil
-        url: https://app.hltcorp.com/admin/prompts
-        color: "#4CAF50"
-      - title: Item Improvement
-        description: "Get 12 AI-powered suggestions to enhance any content. Optimize for engagement, readability, and impact across various formats. Ideal for boosting the quality of educational resources and assessments."
-        icon: mdi-wand
-        url: https://app.hltcorp.com/admin/prompts
-        color: "#2196F3"
-      - title: Polish CSRs
-        description: "Refine NCLEX CSRs with AI assistance. Ensure accuracy, relevance, and alignment with current nursing standards and best practices. Elevate the quality of your clinical scenarios and rationales."
-        icon: mdi-file-document-edit
-        url: https://app.hltcorp.com/admin/prompts
-        color: "#9C27B0"
-      - title: Revamp CSRs
-        description: "Completely overhaul CSRs using advanced AI algorithms. Transform content to meet evolving educational needs and assessment criteria. Revolutionize your clinical scenarios for enhanced learning outcomes."
-        icon: mdi-sync
-        url: https://app.hltcorp.com/admin/prompts
-        color: "#FF9800"
-      - title: Polish Rationale
-        description: "Enhance rationale and key takeaways with AI-driven insights. Improve clarity and educational value of explanations for better learner comprehension. Optimize your educational content for maximum impact."
-        icon: mdi-star-half
-        url: https://app.hltcorp.com/admin/prompts
-        color: "#E91E63"
-      - title: Revamp Rationale
-        description: "Completely overhaul rationale and key takeaways using state-of-the-art AI. Restructure content for maximum educational impact and retention. Transform your explanations into powerful learning tools."
-        icon: mdi-lightbulb-on
-        url: https://app.hltcorp.com/admin/prompts
-        color: "#CDDC39"
-
-  - name: Resources
-    icon: mdi-book-open-page-variant
+  - name: Start
+    icon: fas fa-rocket
     displayData:
       cols: 3
-      itemSize: medium
-      sectionLayout: grid
+    items:
+      - title: AI Agents
+        description: Access all AI agents
+        icon: fas fa-robot
+        url: '#ai-agents'
+      - title: Resources
+        description: View AI resources and guides
+        icon: fas fa-book
+        url: '#resources'
+      - title: AI Tools
+        description: Explore AI development tools
+        icon: fas fa-tools
+        url: '#ai-tools'
+
+  - name: AI Agents
+    icon: fas fa-robot
+    displayData:
+      cols: 1
+    items:
+      - title: Writing Agents
+        icon: fas fa-pen-fancy
+        url: '#'
+        description: Enhance rationales with AI writing guidelines
+      - title: CSR Agents
+        icon: fas fa-headset
+        url: '#'
+        description: Refine and revamp customer service responses
+      - title: Rationale Agents
+        icon: fas fa-brain
+        url: '#'
+        description: Enhance and overhaul rationales using advanced AI
+      - title: See More Agents
+        icon: fas fa-ellipsis-h
+        url: '#'
+        description: Explore additional AI agents
+        type: button
+        target: modal
+
+  - name: Resources
+    icon: fas fa-book
     items:
       - title: AI Agents Guide
-        description: "Comprehensive overview of AI agents and their applications in content creation and enhancement."
-        icon: mdi-book-open-page-variant
-        url: "#"
+        description: Comprehensive overview of AI agents and their applications
+        icon: fas fa-book-open
+        url: https://your-resource-url-1.com
       - title: Prompt Engineering
-        description: "Best practices for creating effective prompts to maximize AI output quality and relevance."
-        icon: mdi-pencil-ruler
-        url: "#"
+        description: Best practices for creating effective prompts
+        icon: fas fa-keyboard
+        url: https://your-resource-url-2.com
       - title: Translator
-        description: "AI-powered language translation tool for multilingual content adaptation and localization."
-        icon: mdi-translate
-        url: "#"
+        description: AI-powered language translation tool
+        icon: fas fa-language
+        url: https://your-resource-url-3.com
+      - title: More Resources
+        icon: fas fa-ellipsis-h
+        url: '#'
+        description: Discover additional AI resources
+        type: button
+        target: modal
 
   - name: AI Tools
-    icon: mdi-tools
+    icon: fas fa-tools
     displayData:
-      cols: 4
-      itemSize: medium
-      sectionLayout: grid
+      cols: 3
     items:
       - title: Dify
-        description: "AI application development platform for creating chatbots and AI assistants."
-        icon: mdi-robot
-        url: "#"
+        description: AI application development platform
+        icon: fas fa-robot
+        url: https://your-tool-url-1.com
       - title: Flowrise
-        description: "Visual AI workflow builder for automating complex AI-driven processes."
-        icon: mdi-diagram-sankey
-        url: https://flowiseai-railway-production-8413.up.railway.app/
+        description: Visual AI workflow builder
+        icon: fas fa-project-diagram
+        url: https://your-tool-url-2.com
       - title: Zapier
-        description: "Automation tool for integrating AI services with other applications."
-        icon: mdi-lightning-bolt
-        url: https://zapier.com/
+        description: Automation tool for integrating AI services
+        icon: fas fa-bolt
+        url: https://your-tool-url-3.com
       - title: OpenUI
-        description: "AI-powered interface design tool for creating user-friendly UIs."
-        icon: mdi-palette
-        url: "#"
+        description: AI-powered interface design tool
+        icon: fas fa-palette
+        url: https://your-tool-url-4.com
       - title: V0 by Vercel
-        description: "AI-assisted web development platform for rapid prototyping."
-        icon: mdi-code-tags
-        url: https://v0.dev/
+        description: AI-assisted web development platform
+        icon: fas fa-code
+        url: https://your-tool-url-5.com
       - title: Aider
-        description: "AI-powered coding assistant for faster and more efficient development."
-        icon: mdi-terminal
-        url: "#"
-      - title: Claude Dev
-        description: "Advanced AI model for natural language processing and generation."
-        icon: mdi-brain
-        url: "#"
-      - title: Apify
-        description: "Web scraping and automation platform with AI capabilities."
-        icon: mdi-spider-web
-        url: https://apify.com/
+        description: AI-powered coding assistant
+        icon: fas fa-terminal
+        url: https://your-tool-url-6.com
+      - title: Explore More Tools
+        icon: fas fa-ellipsis-h
+        url: '#'
+        description: Discover additional AI tools
+        type: button
+        target: modal
 
-  - name: Experiments
-    icon: mdi-flask-outline
-    displayData:
-      cols: 2
-      itemSize: medium
-      sectionLayout: grid
+  - name: What's New
+    icon: fas fa-bell
     items:
-      - title: Prototype 1
-        description: "Experimental AI model for content generation (In Progress)"
-        icon: mdi-flask
-        url: "#"
-        statusIndicator: "🔬 Testing"
-      - title: Prototype 2
-        description: "AI-driven user behavior analysis tool (Early Development)"
-        icon: mdi-flask-empty-outline
-        url: "#"
-        statusIndicator: "🚧 Development"
+      - title: New AI Agent
+        description: Check out our latest AI agent for content generation
+        icon: fas fa-star
+        url: https://your-new-agent-url.com
+      - title: Updated Tool
+        description: Major improvements to our popular AI tool
+        icon: fas fa-arrow-up
+        url: https://your-updated-tool-url.com

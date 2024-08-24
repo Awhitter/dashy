@@ -32,6 +32,8 @@ This is a customized version of Dashy, focused on AI agents and resources.
 - Sleek and stylish design for showcasing AI agents and resources
 - Persistent data storage
 - Easy deployment
+- Large, descriptive tiles for AI Agents
+- Organized sections for Resources, AI Tools, and Experiments
 
 ## GitHub Repository
 
@@ -48,6 +50,12 @@ The project is automatically deployed to Netlify:
 
 - Edit the `user-data/conf.yml` file to customize your dashboard
 - Changes will persist across server restarts
+
+## Customization
+
+- The AI Agents section uses large tiles with detailed descriptions
+- Resources and AI Tools sections use medium-sized tiles for better organization
+- The Experiments section showcases ongoing projects
 
 ## Support
 
